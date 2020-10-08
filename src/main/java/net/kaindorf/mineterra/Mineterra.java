@@ -1,6 +1,8 @@
 package net.kaindorf.mineterra;
 
 import net.kaindorf.mineterra.block.ModBlocks;
+import net.kaindorf.mineterra.entity.EntityInit;
+import net.kaindorf.mineterra.entity.render.RenderHandler;
 import net.kaindorf.mineterra.item.ModItems;
 import net.kaindorf.mineterra.proxy.CommonProxy;
 import net.kaindorf.mineterra.recipe.ModRecipes;
@@ -30,9 +32,11 @@ public class Mineterra
     public static final TutorialTab creativeTab = new TutorialTab();
     public static final Item.ToolMaterial copperToolMaterial = EnumHelper.addToolMaterial("COPPER", 2, 500, 6, 2, 14);
 
+    @Mod.Instance
+    public static Mineterra instance;
+
     @SidedProxy(serverSide = "net.kaindorf.mineterra.proxy.CommonProxy", clientSide = "net.kaindorf.mineterra.proxy.ClientProxy")
     public static CommonProxy proxy;
-
 
     @Mod.EventBusSubscriber
     public static class RegistrationHandler {
@@ -59,6 +63,8 @@ public class Mineterra
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         GameRegistry.registerWorldGenerator(new ModWorldGeneration(), 3);
+        EntityInit.registerEntities();
+        RenderHandler.registerEntityRenders();
     }
 
     @Mod.EventHandler
