@@ -1,0 +1,14 @@
+# items
+item.ingot_copper.name=Copper Ingot
+item.copper_sword.name=Copper Sword
+
+# Blocks
+tile.ore_copper.name=Copper Ore
+tile.pedestal.name=Pedestal
+
+# Creative
+itemGroup.mineterra=Mineterra
+
+# Advancements
+advancements.mineterra.root.title=Atop of the world
+advancements.mineterra.root.description=Get in the Sky

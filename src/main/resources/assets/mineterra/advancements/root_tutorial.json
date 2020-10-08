@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:beacon"
+    },
+    "title":{
+      "translate": "advancements.mineterra.root.title"
+    },
+    "description": {
+      "translate": "advancements.mineterra.root.description"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "test_location": {
+      "trigger": "minecraft:location",
+        "conditions": {
+            "position": {
+              "y": {
+                "min": 180
+              }
+            }
+        }
+      }
+    }
+}

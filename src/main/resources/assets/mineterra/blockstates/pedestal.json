@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "normal": {
+      "model": "mineterra:pedestal"
+    },
+    "inventory": {
+      "model": "mineterra:pedestal",
+      "transform": "forge:default-block"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:stick"
+    },
+    "title": "Branch 1",
+    "description": "One branch of the tree."
+  },
+  "parent": "mineterra:root_tutorial",
+  "criteria": {
+    "auto": {
+      "trigger": "minecraft:location"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mineterra",
+  "name": "Mineterra Mod",
+  "description": "A League of Legends based Mod for Minecraft.",
+  "version": "1.0",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/Shadow17402/Mineterra",
+  "updateUrl": "",
+  "authorList": ["Shadow174","0lymp1us"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

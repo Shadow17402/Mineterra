@@ -1,0 +1,20 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:blaze_rod"
+    },
+    "title": "Branch 2",
+    "description": "Another branch of the tree."
+  },
+  "parent": "mineterra:root_tutorial",
+  "criteria": {
+    "auto": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "rewards": {
+    "recipes": ["minecraft:redstone", "minecraft:ladder"],
+    "loot": ["minecraft:entities/creeper", "minecraft:chests/simple_dungeon"],
+    "experience": 500
+  }
+}
