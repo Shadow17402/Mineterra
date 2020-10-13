@@ -14,6 +14,7 @@ public class EntityInit {
     public static void registerEntities(){
         int id = 2000;
         registerEntity("poro",EntityPoro.class,id,50,16738740,000000);
+        registerEntity("poroking",EntityPoroKing.class,id+1,50,16738740,000000);
     }
 
     private static void registerEntity(String name, Class<? extends Entity> entity,int id,int range,int color1,int color2){
