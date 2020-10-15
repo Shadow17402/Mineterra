@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 public class EntityPoro extends EntityLiving {
 
     public EntityPoro(World worldIn) {
+
         super(worldIn);
     }
 

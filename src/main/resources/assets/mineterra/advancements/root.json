@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:beacon"
+      "item": "mineterra:ingot_copper"
     },
     "title":{
       "translate": "advancements.mineterra.root.title"
@@ -12,15 +12,8 @@
     "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
   },
   "criteria": {
-    "test_location": {
-      "trigger": "minecraft:location",
-        "conditions": {
-            "position": {
-              "y": {
-                "min": 180
-              }
-            }
-        }
-      }
+    "auto": {
+      "trigger": "minecraft:location"
     }
+  }
 }

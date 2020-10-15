@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import sun.security.krb5.internal.APRep;
 
 @Mod(modid = Mineterra.MODID, name = Mineterra.NAME, version = Mineterra.VERSION)
 public class Mineterra

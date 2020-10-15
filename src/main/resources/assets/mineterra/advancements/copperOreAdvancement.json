@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "mineterra:ore_copper"
+    },
+    "title": {
+      "translate": "advancements.mineterra.copperOre.title"
+    },
+    "description": {
+      "translate": "advancements.mineterra.copperOre.description"
+    }
+  },
+  "parent": "mineterra:root",
+  "criteria": {
+    "auto": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mineterra:ore_copper"
+          }
+        ]
+      }
+    }
+  }
+}

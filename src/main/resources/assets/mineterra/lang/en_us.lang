@@ -19,5 +19,9 @@ tile.pedestal.name=Pedestal
 itemGroup.mineterra=Mineterra
 
 # Advancements
-advancements.mineterra.root.title=Atop of the world
-advancements.mineterra.root.description=Get in the Sky
+advancements.mineterra.root.title=Mineterra
+advancements.mineterra.root.description=The Start in this World
+advancements.mineterra.copperOre.title=Copper
+advancements.mineterra.copperOre.description=Find your first copper ore.
+advancements.mineterra.copperIngot.title=Copper Ingot
+advancements.mineterra.copperIngot.description=Smelt your first copper ingot.

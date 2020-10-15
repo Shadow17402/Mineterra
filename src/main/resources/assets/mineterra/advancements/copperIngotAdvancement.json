@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "mineterra:ingot_copper"
+    },
+    "title": {
+      "translate": "advancements.mineterra.copperIngot.title"
+    },
+    "description": {
+      "translate": "advancements.mineterra.copperIngot.description"
+    }
+  },
+  "parent": "mineterra:copperOreAdvancement",
+  "criteria": {
+    "auto": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mineterra:ingot_copper"
+          }
+        ]
+      }
+    }
+  }
+}

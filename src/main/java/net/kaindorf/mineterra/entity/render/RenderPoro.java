@@ -3,8 +3,6 @@ package net.kaindorf.mineterra.entity.render;
 import net.kaindorf.mineterra.Mineterra;
 import net.kaindorf.mineterra.entity.EntityPoro;
 import net.kaindorf.mineterra.entity.model.ModelPoro;
-import net.kaindorf.mineterra.entity.model.ModelPoroKing;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;

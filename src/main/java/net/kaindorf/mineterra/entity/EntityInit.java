@@ -1,13 +1,9 @@
 package net.kaindorf.mineterra.entity;
 
 import net.kaindorf.mineterra.Mineterra;
-import net.kaindorf.mineterra.TutorialTab;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
-
-import java.awt.*;
-import java.lang.ref.Reference;
 
 public class EntityInit {
 
