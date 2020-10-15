@@ -9,7 +9,9 @@ import net.kaindorf.mineterra.recipe.ModRecipes;
 import net.kaindorf.mineterra.world.ModWorldGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
@@ -31,6 +33,8 @@ public class Mineterra
     public static final String VERSION = "1.0";
     public static final TutorialTab creativeTab = new TutorialTab();
     public static final Item.ToolMaterial copperToolMaterial = EnumHelper.addToolMaterial("COPPER", 2, 500, 6, 2, 14);
+    public static final ItemArmor.ArmorMaterial copperArmorMaterial = EnumHelper.addArmorMaterial("COPPER", MODID + ":copper", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static final ItemArmor.ArmorMaterial CrownArmorMaterial = EnumHelper.addArmorMaterial("CROWN", MODID + ":crown", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 
     @Mod.Instance
     public static Mineterra instance;
