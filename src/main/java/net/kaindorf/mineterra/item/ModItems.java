@@ -1,6 +1,7 @@
 package net.kaindorf.mineterra.item;
 
 import net.kaindorf.mineterra.Mineterra;
+import net.kaindorf.mineterra.item.ChampionWeapons.SwordYi;
 import net.kaindorf.mineterra.item.tool.*;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -19,6 +20,7 @@ public class ModItems {
     public static ItemArmor copperLeggings  = new ItemArmor(Mineterra.copperArmorMaterial, EntityEquipmentSlot.LEGS, "copper_leggings");
     public static ItemArmor copperBoots = new ItemArmor(Mineterra.copperArmorMaterial, EntityEquipmentSlot.FEET, "copper_boots");
     public static ItemArmor poroKingCrown = new ItemArmor(Mineterra.CrownArmorMaterial, EntityEquipmentSlot.HEAD, "poro_king_crown");
+    public static SwordYi swordYi = new SwordYi(Mineterra.copperToolMaterial,"sword_yi");
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
@@ -32,7 +34,8 @@ public class ModItems {
                 copperChestplate,
                 copperLeggings,
                 copperBoots,
-                poroKingCrown
+                poroKingCrown,
+                swordYi
         );
     }
 
@@ -48,6 +51,7 @@ public class ModItems {
         copperLeggings.registerItemModel();
         copperBoots.registerItemModel();
         poroKingCrown.registerItemModel();
+        swordYi.registerItemModel();
     }
 
 }
