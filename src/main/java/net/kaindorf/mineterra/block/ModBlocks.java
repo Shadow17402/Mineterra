@@ -1,5 +1,6 @@
 package net.kaindorf.mineterra.block;
 
+import net.kaindorf.mineterra.block.pedestal.BlockPedestal;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -14,6 +15,7 @@ public class ModBlocks {
                 oreCopper,
                 pedestal
         );
+
     }
 
     public static void registerItemBlocks(IForgeRegistry<Item> registry) {

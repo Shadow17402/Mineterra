@@ -1,6 +1,7 @@
 package net.kaindorf.mineterra.proxy;
 
 import net.kaindorf.mineterra.Mineterra;
+import net.kaindorf.mineterra.ModGUIHandler;
 import net.kaindorf.mineterra.block.ModBlocks;
 import net.kaindorf.mineterra.entity.EntityInit;
 import net.kaindorf.mineterra.entity.render.RenderHandler;
@@ -9,6 +10,7 @@ import net.kaindorf.mineterra.recipe.ModRecipes;
 import net.kaindorf.mineterra.world.ModWorldGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +18,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod.EventBusSubscriber(modid = Mineterra.MODID)
@@ -25,6 +28,7 @@ public class CommonProxy {
         GameRegistry.registerWorldGenerator(new ModWorldGeneration(), 3);
         EntityInit.registerEntities();
         RenderHandler.registerEntityRenders();
+        NetworkRegistry.INSTANCE.registerGuiHandler(Mineterra.instance,new ModGUIHandler());
     }
 
     public void init(FMLInitializationEvent event){
@@ -33,6 +37,10 @@ public class CommonProxy {
 
     public void postInit(FMLPostInitializationEvent event){
 
+    }
+
+    public String localize(String unlocalized, Object... args) {
+        return I18n.translateToLocalFormatted(unlocalized, args);
     }
 
     @SubscribeEvent
