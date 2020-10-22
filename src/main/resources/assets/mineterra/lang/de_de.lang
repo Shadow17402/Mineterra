@@ -1,0 +1,27 @@
+# items
+item.ingot_copper.name=Kupfer
+item.copper_sword.name=Kupferschwert
+item.copper_pickaxe.name=Kupferspitzhacke
+item.copper_axe.name=Kupferaxt
+item.copper_shovel.name=Kupferschaufel
+item.copper_hoe.name=Kupferhacke
+item.copper_helmet.name=Kupferhelm
+item.copper_chestplate.name=Kupferharnisch
+item.copper_leggings.name=Kupferbeinschutz
+item.copper_boots.name=Kupferstiefel
+item.poro_king_crown.name=Krone des Porokönigs
+
+# Blocks
+tile.ore_copper.name=Kupfererz
+tile.pedestal.name=Podest
+
+# Creative
+itemGroup.mineterra=Mineterra
+
+# Advancements
+advancements.mineterra.root.title=Mineterra
+advancements.mineterra.root.description=Der Anfang dieser Welt.
+advancements.mineterra.copperOre.title=Kupfererz
+advancements.mineterra.copperOre.description=Finde dein erstes Kupfererz.
+advancements.mineterra.copperIngot.title=Kupfer
+advancements.mineterra.copperIngot.description=Schmelze dein erstes Kupfer.
