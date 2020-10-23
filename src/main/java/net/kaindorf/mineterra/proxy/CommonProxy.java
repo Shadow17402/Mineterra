@@ -6,6 +6,8 @@ import net.kaindorf.mineterra.block.ModBlocks;
 import net.kaindorf.mineterra.entity.EntityInit;
 import net.kaindorf.mineterra.entity.render.RenderHandler;
 import net.kaindorf.mineterra.item.ModItems;
+import net.kaindorf.mineterra.network.PacketRequestUpdatePedestal;
+import net.kaindorf.mineterra.network.PacketUpdatePedestal;
 import net.kaindorf.mineterra.recipe.ModRecipes;
 import net.kaindorf.mineterra.world.ModWorldGeneration;
 import net.minecraft.block.Block;
@@ -19,16 +21,23 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber(modid = Mineterra.MODID)
 public class CommonProxy {
+
+    public static SimpleNetworkWrapper network;
 
     public void preInit(FMLPreInitializationEvent event){
         GameRegistry.registerWorldGenerator(new ModWorldGeneration(), 3);
         EntityInit.registerEntities();
         RenderHandler.registerEntityRenders();
         NetworkRegistry.INSTANCE.registerGuiHandler(Mineterra.instance,new ModGUIHandler());
+        network = NetworkRegistry.INSTANCE.newSimpleChannel(Mineterra.MODID);
+        network.registerMessage(new PacketUpdatePedestal.Handler(), PacketUpdatePedestal.class, 0, Side.CLIENT);
+        network.registerMessage(new PacketRequestUpdatePedestal.Handler(), PacketRequestUpdatePedestal.class, 1, Side.SERVER);
     }
 
     public void init(FMLInitializationEvent event){
@@ -37,6 +46,9 @@ public class CommonProxy {
 
     public void postInit(FMLPostInitializationEvent event){
 
+    }
+
+    public void registerRenders(){
     }
 
     public String localize(String unlocalized, Object... args) {

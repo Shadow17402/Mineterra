@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 @Mod(modid = Mineterra.MODID, name = Mineterra.NAME, version = Mineterra.VERSION)
 public class Mineterra
@@ -31,6 +32,7 @@ public class Mineterra
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         proxy.preInit(event);
+        proxy.registerRenders();
     }
 
     @Mod.EventHandler
