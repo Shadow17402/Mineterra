@@ -1,5 +1,6 @@
 package net.kaindorf.mineterra;
 
+import net.kaindorf.mineterra.commands.CommandDimensionTp;
 import net.kaindorf.mineterra.proxy.CommonProxy;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -7,10 +8,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.event.*;
 
 @Mod(modid = Mineterra.MODID, name = Mineterra.NAME, version = Mineterra.VERSION)
 public class Mineterra
@@ -28,6 +26,11 @@ public class Mineterra
 
     @SidedProxy(serverSide = "net.kaindorf.mineterra.proxy.ServerProxy", clientSide = "net.kaindorf.mineterra.proxy.ClientProxy")
     public static CommonProxy proxy;
+
+    @Mod.EventHandler
+    public static void serverInit(FMLServerStartingEvent event){
+        event.registerServerCommand(new CommandDimensionTp());
+    }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){

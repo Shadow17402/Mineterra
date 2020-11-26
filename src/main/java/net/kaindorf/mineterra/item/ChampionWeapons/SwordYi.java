@@ -15,7 +15,10 @@ public class SwordYi extends ItemSword {
         super(material, name);
     }
 
-
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {

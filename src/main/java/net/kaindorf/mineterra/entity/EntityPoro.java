@@ -1,10 +1,6 @@
 package net.kaindorf.mineterra.entity;
 
-import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.monster.EntitySlime;
-import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -12,13 +8,12 @@ import net.minecraft.world.World;
 public class EntityPoro extends EntityLiving {
 
     public EntityPoro(World worldIn) {
-
         super(worldIn);
     }
 
     @Override
     public void onDeath(DamageSource cause) {
-        //super.onDeath(cause);
+        super.onDeath(cause);
     }
 
     @Override

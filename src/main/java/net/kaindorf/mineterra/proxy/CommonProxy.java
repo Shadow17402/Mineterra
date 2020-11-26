@@ -3,12 +3,15 @@ package net.kaindorf.mineterra.proxy;
 import net.kaindorf.mineterra.Mineterra;
 import net.kaindorf.mineterra.ModGUIHandler;
 import net.kaindorf.mineterra.block.ModBlocks;
+import net.kaindorf.mineterra.commands.CommandDimensionTp;
 import net.kaindorf.mineterra.entity.EntityInit;
 import net.kaindorf.mineterra.entity.render.RenderHandler;
 import net.kaindorf.mineterra.item.ModItems;
 import net.kaindorf.mineterra.network.PacketRequestUpdatePedestal;
 import net.kaindorf.mineterra.network.PacketUpdatePedestal;
 import net.kaindorf.mineterra.recipe.ModRecipes;
+import net.kaindorf.mineterra.world.BiomeInit;
+import net.kaindorf.mineterra.world.DimensionInit;
 import net.kaindorf.mineterra.world.ModWorldGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -19,6 +22,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
@@ -38,6 +42,8 @@ public class CommonProxy {
         network = NetworkRegistry.INSTANCE.newSimpleChannel(Mineterra.MODID);
         network.registerMessage(new PacketUpdatePedestal.Handler(), PacketUpdatePedestal.class, 0, Side.CLIENT);
         network.registerMessage(new PacketRequestUpdatePedestal.Handler(), PacketRequestUpdatePedestal.class, 1, Side.SERVER);
+        DimensionInit.registerDimensions();
+        BiomeInit.registerBiomes();
     }
 
     public void init(FMLInitializationEvent event){
