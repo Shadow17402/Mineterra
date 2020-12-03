@@ -5,10 +5,12 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import net.kaindorf.mineterra.block.ModBlocks;
 import net.kaindorf.mineterra.world.BiomeInit;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -23,6 +25,8 @@ import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCavesHell;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenHellLava;
+import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.terraingen.ChunkGeneratorEvent.InitNoiseField;
@@ -38,12 +42,12 @@ public class ChunkGeneratorVoid implements IChunkGenerator
     protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 
     //Block that is usually Netherrack
-    protected static final IBlockState MAIN_BLOCK = Blocks.BOOKSHELF.getDefaultState();
+    protected static final IBlockState MAIN_BLOCK = ModBlocks.VoidStone.getDefaultState();
     //Block that is usally Lava
     protected static final IBlockState YOUR_LIQUID = Blocks.WATER.getDefaultState();
     //Blocks that are usally gravel and soul sand
-    protected static final IBlockState OTHER_BLOCK1 = Blocks.GLASS.getDefaultState();
-    protected static final IBlockState OTHER_BLOCK2 = Blocks.GOLD_ORE.getDefaultState();
+    protected static final IBlockState OTHER_BLOCK1 = ModBlocks.VoidDirt.getDefaultState();
+    protected static final IBlockState OTHER_BLOCK2 = Blocks.OBSIDIAN.getDefaultState();
 
     private final World world;
     private final boolean generateStructures;
@@ -53,11 +57,13 @@ public class ChunkGeneratorVoid implements IChunkGenerator
     private NoiseGeneratorOctaves lperlinNoise1, lperlinNoise2, perlinNoise1, slowsandGravelNoiseGen, netherrackExculsivityNoiseGen, scaleNoise, depthNoise;
     double[] pnr, ar, br, dr, noiseData4;
 
+
+
     /* Any Structures you want - These are all of the Nether Ones
     private final WorldGenFire fireFeature = new WorldGenFire();
     private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
     private final WorldGenGlowStone2 hellPortalGen = new WorldGenGlowStone2();
-    private final WorldGenerator quartzGen = new WorldGenMinable(Blocks.QUARTZ_ORE.getDefaultState(), 14, BlockMatcher.forBlock(Blocks.COPPER_BLOCK));
+    private final WorldGenerator quartzGen = new WorldGenMinable(Blocks.QUARTZ_ORE.getDefaultState(), 14, BlockMatcher.forBlock(ModBlocks.VoidDirt));
     private final WorldGenerator magmaGen = new WorldGenMinable(Blocks.MAGMA.getDefaultState(), 33, BlockMatcher.forBlock(Blocks.COPPER_BLOCK));
     private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
     private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
@@ -385,7 +391,9 @@ public class ChunkGeneratorVoid implements IChunkGenerator
         //This and any other things you may wish to add
         if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.NETHER_LAVA))
         {
-            for (int k = 0; k < 8; ++k) { this.hellSpringGen.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(120) + 4, this.rand.nextInt(16) + 8)); }
+            for (int k = 0; k < 8; ++k) {
+                this.hellSpringGen.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(120) + 4, this.rand.nextInt(16) + 8));
+            }
         }
 
         if(generateStructures)
