@@ -11,6 +11,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ModItems {
 
     public static ItemBase ingotCopper = new ItemBase("ingot_copper","ingotCopper");
+    public static ItemBase voidGem = new ItemBase("void_gem","voidGem");
     public static ItemSword copperSword = new ItemSword(Mineterra.copperToolMaterial, "copper_sword");
     public static ItemPickaxe copperPickaxe = new ItemPickaxe(Mineterra.copperToolMaterial, "copper_pickaxe");
     public static ItemAxe copperAxe = new ItemAxe(Mineterra.copperToolMaterial,"copper_axe");
@@ -27,6 +28,7 @@ public class ModItems {
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
                 ingotCopper,
+                voidGem,
                 copperSword,
                 copperPickaxe,
                 copperAxe,
@@ -44,6 +46,7 @@ public class ModItems {
 
     public static void registerModels() {
         ingotCopper.registerItemModel();
+        voidGem.registerItemModel();
         copperSword.registerItemModel();
         copperPickaxe.registerItemModel();
         copperAxe.registerItemModel();

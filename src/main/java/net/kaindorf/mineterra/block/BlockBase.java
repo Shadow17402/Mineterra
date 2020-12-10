@@ -11,14 +11,19 @@ public class BlockBase extends Block {
 
     protected String name;
 
-    public BlockBase(Material material, String name) {
+    public BlockBase(Material material, String name, float hardness) {
         super(material);
 
         this.name = name;
-
+        setHardness(hardness);
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(Mineterra.creativeTab);
+    }
+
+    @Override
+    public Block setHardness(float hardness) {
+        return super.setHardness(hardness);
     }
 
     public void registerItemModel(Item itemBlock) {

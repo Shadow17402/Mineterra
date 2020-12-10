@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public abstract class BlockTileEntity<TE extends TileEntity> extends BlockBase {
 
     public BlockTileEntity(Material material, String name) {
-        super(material, name);
+        super(material, name, 1.5f);
     }
 
     public abstract Class<TE> getTileEntityClass();

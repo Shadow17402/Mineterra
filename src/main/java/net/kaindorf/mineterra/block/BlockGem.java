@@ -8,12 +8,14 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Random;
 
-public class BlockOre  extends BlockBase{
+public class BlockGem extends BlockBase{
 
     private String oreName;
-    public BlockOre(String name, String oreName) {
-        super(Material.ROCK, name, 2f);
+    private Item drop;
 
+    public BlockGem(String name, String oreName,Item drop) {
+        super(Material.ROCK, name, 3f);
+        this.drop=drop;
         this.oreName = oreName;
 
         setResistance(5f);
@@ -24,13 +26,14 @@ public class BlockOre  extends BlockBase{
     }
 
     @Override
-    public BlockOre setCreativeTab(CreativeTabs tab) {
+    public BlockGem setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
     }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return super.getItemDropped(state, rand, fortune);
+        return drop;
     }
+
 }

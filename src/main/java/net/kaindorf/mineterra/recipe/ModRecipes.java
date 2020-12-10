@@ -13,6 +13,7 @@ public class ModRecipes {
         //Ore Dict
         ModBlocks.oreCopper.initOreDict();
         ModItems.ingotCopper.initOreDict();
+        ModBlocks.VoidOre.initOreDict();
     }
 
 }
