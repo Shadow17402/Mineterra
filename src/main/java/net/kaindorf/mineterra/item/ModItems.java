@@ -1,8 +1,11 @@
 package net.kaindorf.mineterra.item;
 
 import net.kaindorf.mineterra.Mineterra;
+import net.kaindorf.mineterra.item.ChampionWeapons.BowAshe;
+import net.kaindorf.mineterra.item.ChampionWeapons.DariusAxe;
 import net.kaindorf.mineterra.item.ChampionWeapons.LanternJax;
 import net.kaindorf.mineterra.item.ChampionWeapons.SwordYi;
+import net.kaindorf.mineterra.item.ChampionWeapons.arrows.AsheArrow;
 import net.kaindorf.mineterra.item.tool.*;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -24,6 +27,9 @@ public class ModItems {
     public static ItemArmor poroKingCrown = new ItemArmor(Mineterra.CrownArmorMaterial, EntityEquipmentSlot.HEAD, "poro_king_crown");
     public static SwordYi swordYi = new SwordYi(Mineterra.copperToolMaterial,"sword_yi");
     public static LanternJax lanternJax = new LanternJax(Mineterra.copperToolMaterial,"lantern_jax");
+    public static DariusAxe axeDarius = new DariusAxe(Mineterra.copperToolMaterial,"darius_axe");
+    public static BowAshe bowAshe = new BowAshe("ashe_bow",7000,5000);
+    public static AsheArrow arrowAshe = new AsheArrow("ashe_arrow");
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
@@ -40,7 +46,10 @@ public class ModItems {
                 copperBoots,
                 poroKingCrown,
                 swordYi,
-                lanternJax
+                lanternJax,
+                axeDarius,
+                bowAshe,
+                arrowAshe
         );
     }
 
@@ -59,6 +68,9 @@ public class ModItems {
         poroKingCrown.registerItemModel();
         swordYi.registerItemModel();
         lanternJax.registerItemModel();
+        axeDarius.registerItemModel();
+        bowAshe.registerItemModel();
+        arrowAshe.registerItemModel();
     }
 
 }
